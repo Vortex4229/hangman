@@ -9,7 +9,6 @@ class gameGUI:
         self.root.title("Hangman")
         self.root.resizable(False, False)
 
-        # configuring word list
         self.file = open("words.txt", "r")
         data = self.file.read()
         self.words = data.split("\n")
@@ -19,7 +18,6 @@ class gameGUI:
         self.word_lines = None
         self.guesses = None
         self.word = None
-        # self.twoPlayers = False
         self.false_guess = None
 
         self.modeQuestion = None
@@ -44,24 +42,18 @@ class gameGUI:
         self.random = None
 
         self.title = tk.Label(self.root, text="Hangman", font=("Helvetica", 50))
-        self.onePlayer = tk.Button(self.root, text="One Player", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.modeSelect)
-        # self.twoPlayer = tk.Button(self.root, text="Two Players", font=("Helvetica", 40), borderwidth=4, relief="raised", command = self.twoPlayer)
-        self.twoPlayerComingSoon = tk.Label(self.root, text="Two player mode coming soon!", font=("Helvetica", 30))
+        self.onePlayer = tk.Button(self.root, text="Play", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.modeSelect)
         self.version = tk.Label(self.root, text="v1.0", font=("Helvetica", 20))
 
         self.title.place(x=500, y=50, anchor=tk.N)
         self.onePlayer.place(x=500, y=200, anchor=tk.N)
-        # self.twoPlayer.place(x=500, y=350, anchor=tk.N)
-        self.twoPlayerComingSoon.place(x=500, y=350, anchor=tk.N)
         self.version.place(x=950, y=650, anchor=tk.N)
 
         self.root.mainloop()
 
     def modeSelect(self):
         self.onePlayer.destroy()
-        # self.twoPlayer.destroy()
         self.title.destroy()
-        self.twoPlayerComingSoon.destroy()
         self.version.destroy()
 
         self.modeQuestion = tk.Label(self.root, text="Select a mode:", font=("Helvetica", 50))
@@ -106,25 +98,6 @@ class gameGUI:
         self.guesses = 5
 
         self.game()
-
-    '''
-    # two player mode not implemented yet
-    
-    def twoPlayer(self):
-        self.onePlayer.destroy()
-        self.twoPlayer.destroy()
-        self.title.destroy()
-
-        self.twoPlayers = True
-
-        self.custom_or_random = tk.Label(self.root, text="Custom or random word?", font=("Helvetica", 50))
-        self.custom = tk.Button(self.root, text="Custom", font=("Helvetica", 40), borderwidth=4, relief="raised")
-        self.random = tk.Button(self.root, text="Random", font=("Helvetica", 40), borderwidth=4, relief="raised")
-
-        self.custom_or_random.place(x=500, y=50, anchor=tk.N)
-        self.custom.place(x=500, y=200, anchor=tk.N)
-        self.random.place(x=500, y=350, anchor=tk.N)
-    '''
 
     def game(self):
         self.word_lines = "_ " * len(self.word)
@@ -237,7 +210,6 @@ class gameGUI:
             self.return_button.destroy()
 
         # variables
-        # self.twoPlayers = False
         self.win = False
         self.lose = False
         self.word_lines = None
@@ -245,15 +217,11 @@ class gameGUI:
         self.word = None
 
         self.title = tk.Label(self.root, text="Hangman", font=("Helvetica", 50))
-        self.onePlayer = tk.Button(self.root, text="One Player", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.modeSelect)
-        # self.twoPlayer = tk.Button(self.root, text="Two Players", font=("Helvetica", 40), borderwidth=4, relief="raised", command = self.twoPlayer)
-        self.twoPlayerComingSoon = tk.Label(self.root, text="Two player mode coming soon!", font=("Helvetica", 30))
+        self.onePlayer = tk.Button(self.root, text="Play", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.modeSelect)
         self.version = tk.Label(self.root, text="v1.0", font=("Helvetica", 20))
 
         self.title.place(x=500, y=50, anchor=tk.N)
         self.onePlayer.place(x=500, y=200, anchor=tk.N)
-        # self.twoPlayer.place(x=500, y=350, anchor=tk.N)
-        self.twoPlayerComingSoon.place(x=500, y=350, anchor=tk.N)
         self.version.place(x=950, y=650, anchor=tk.N)
 
 
