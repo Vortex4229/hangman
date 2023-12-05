@@ -22,9 +22,6 @@ class gameGUI:
         # self.twoPlayers = False
         self.false_guess = None
 
-        self.title = None
-        self.onePlayer = None
-        # self.twoPlayer = None
         self.modeQuestion = None
         self.easy = None
         self.medium = None
@@ -50,11 +47,13 @@ class gameGUI:
         self.onePlayer = tk.Button(self.root, text="One Player", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.modeSelect)
         # self.twoPlayer = tk.Button(self.root, text="Two Players", font=("Helvetica", 40), borderwidth=4, relief="raised", command = self.twoPlayer)
         self.twoPlayerComingSoon = tk.Label(self.root, text="Two player mode coming soon!", font=("Helvetica", 30))
+        self.version = tk.Label(self.root, text="v1.0", font=("Helvetica", 20))
 
         self.title.place(x=500, y=50, anchor=tk.N)
         self.onePlayer.place(x=500, y=200, anchor=tk.N)
         # self.twoPlayer.place(x=500, y=350, anchor=tk.N)
         self.twoPlayerComingSoon.place(x=500, y=350, anchor=tk.N)
+        self.version.place(x=950, y=650, anchor=tk.N)
 
         self.root.mainloop()
 
@@ -63,6 +62,7 @@ class gameGUI:
         # self.twoPlayer.destroy()
         self.title.destroy()
         self.twoPlayerComingSoon.destroy()
+        self.version.destroy()
 
         self.modeQuestion = tk.Label(self.root, text="Select a mode:", font=("Helvetica", 50))
         self.easy = tk.Button(self.root, text="Easy", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.easy_set)
@@ -247,10 +247,14 @@ class gameGUI:
         self.title = tk.Label(self.root, text="Hangman", font=("Helvetica", 50))
         self.onePlayer = tk.Button(self.root, text="One Player", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.modeSelect)
         # self.twoPlayer = tk.Button(self.root, text="Two Players", font=("Helvetica", 40), borderwidth=4, relief="raised", command = self.twoPlayer)
+        self.twoPlayerComingSoon = tk.Label(self.root, text="Two player mode coming soon!", font=("Helvetica", 30))
+        self.version = tk.Label(self.root, text="v1.0", font=("Helvetica", 20))
 
         self.title.place(x=500, y=50, anchor=tk.N)
         self.onePlayer.place(x=500, y=200, anchor=tk.N)
         # self.twoPlayer.place(x=500, y=350, anchor=tk.N)
+        self.twoPlayerComingSoon.place(x=500, y=350, anchor=tk.N)
+        self.version.place(x=950, y=650, anchor=tk.N)
 
 
 gameGUI()
