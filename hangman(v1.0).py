@@ -184,10 +184,10 @@ class gameGUI:
 
         self.lose_label = tk.Label(self.root, text="You lose!", font=("Helvetica", 50))
         self.word_label = tk.Label(self.root, text="The word was: " + self.word, font=("Helvetica", 25))
+        self.return_button = tk.Button(self.root, text="Return to Menu", font=("Helvetica", 40), borderwidth=4, relief="raised", command=self.return_to_menu)
 
         self.lose_label.place(x=500, y=50, anchor=tk.N)
         self.word_label.place(x=500, y=200, anchor=tk.N)
-        self.guesses_left.place(x=500, y=300, anchor=tk.N)
         self.return_button.place(x=500, y=500, anchor=tk.N)
 
     def return_to_menu(self):
